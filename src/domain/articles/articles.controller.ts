@@ -7,7 +7,7 @@ export class ArticlesController {
 
   @Post()
   createArticle() {
-    const grants = this.grantsService.getGrants();
+    const grants = this.grantsService.getGrants(1);
     if (!grants.edit) {
       throw new ForbiddenException('You have not appropriate grant');
     }
